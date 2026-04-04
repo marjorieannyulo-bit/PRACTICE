@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CJ's Water Station</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+
+    <!-- LOGO (CLICKABLE + DOUBLE CLICK SECRET) -->
+    <div class="logo" ondblclick="adminAccess()">
+      <img src="pic/logo.jpeg" alt="Logo">
+      <span>CJ's Water Station</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="app.html?view=services">Services</a>
+      <a href="auth.html">Login</a>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="hero-box">
+
+    <!-- YOU CAN REPLACE THIS WITH YOUR LOGO IMAGE -->
+    <h1>Pure Water. Better Living.</h1>
+
+    <p>
+      At CJ’s Water Station, we provide clean, safe, and affordable drinking water 
+      designed for your everyday needs. From fast refilling to reliable delivery, 
+      we make sure you always have access to quality water anytime.
+    </p>
+
+    <button onclick="location='app.html?view=services'">
+      Explore Our Services
+    </button>
+
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+
+  <h2>What We Offer</h2>
+
+  <div class="services-grid">
+
+    <!-- REFILL -->
+    <div class="service-card" onclick="location='app.html?view=services'">
+      <img src="pic/refill.jpeg">
+      <h3>Water Refill</h3>
+      <p>
+        Fast and affordable refill service ensuring every drop is clean,
+        purified, and ready for daily consumption.
+      </p>
+    </div>
+
+    <!-- DELIVERY -->
+    <div class="service-card" onclick="location='app.html?view=services'">
+      <img src="pic/Deliver.jpeg">
+      <h3>Delivery Service</h3>
+      <p>
+        Enjoy the convenience of having safe drinking water delivered
+        straight to your home or business anytime you need it.
+      </p>
+    </div>
+
+    <!-- CONTAINER -->
+    <div class="service-card" onclick="location='app.html?view=services'">
+      <img src="pic/Bottle.jpeg">
+      <h3>Water Containers</h3>
+      <p>
+        Durable and hygienic containers designed to safely store your
+        water and maintain its quality for longer use.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+<script>
+function adminAccess(){
+    let pass = prompt("Enter admin password:");
+
+    if(pass === "1234"){
+        localStorage.setItem("session","admin");
+        location = "admin.html";
+    } else {
+        alert("Access denied");
+    }
+}
+</script>
+</body>
+</html>
